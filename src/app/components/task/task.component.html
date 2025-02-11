@@ -4,5 +4,6 @@
     <button (click)="addTask(inputTask.value)">Adicionar</button>
     <ul *ngFor="let task of listTasks">    
         <li>{{ task.name }}</li>
+        <i (click)="deleteTask(task.id)">deletar</i>
     </ul>
 </div>

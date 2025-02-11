@@ -30,4 +30,8 @@ export class TaskComponent implements OnInit {
     }
   }
 
+  deleteTask(idTask: number) {
+    this.listTasks = this.listTasks.filter(item => (item.id != idTask))
+  }
+
 }
