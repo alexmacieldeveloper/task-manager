@@ -1,7 +1,8 @@
 <div class="input_container">
     <h3>Lista de Tarefas</h3>
-    <input type="text" placeholder="Criar tarefa" #inputTask>
-    <button (click)="addTask(inputTask.value)"><i class="fa fa-plus"></i></button>
+    <input type="text" placeholder="Criar tarefa" #inputTask
+        (keyup.enter)="addTask(inputTask.value); inputTask.value='' ">
+    <button (click)="addTask(inputTask.value); inputTask.value='' "><i class="fa fa-plus"></i></button>
     <ul *ngFor="let task of listTasks">    
         <li>
             <div (click)="doneTask(task.id)">
