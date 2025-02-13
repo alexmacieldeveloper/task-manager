@@ -4,7 +4,7 @@
     <button (click)="addTask(inputTask.value)"><i class="fa fa-plus"></i></button>
     <ul *ngFor="let task of listTasks">    
         <li>
-            <div>
+            <div (click)="doneTask(task.id)">
                 {{ task.name }} <i *ngIf="task.done" class="material-icons">done</i>
             </div>
         </li>

@@ -34,4 +34,12 @@ export class TaskComponent implements OnInit {
     this.listTasks = this.listTasks.filter(item => (item.id != idTask))
   }
 
+  doneTask(idTask: numberd) {
+    const taskFound = this.listTasks.find(item => (item.id == idTask))
+
+    if (taskFound) {
+      taskFound.done = !taskFound.done
+    }
+  }
+
 }
