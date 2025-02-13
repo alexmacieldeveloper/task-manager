@@ -3,7 +3,11 @@
     <input type="text" placeholder="Criar tarefa" #inputTask>
     <button (click)="addTask(inputTask.value)"><i class="fa fa-plus"></i></button>
     <ul *ngFor="let task of listTasks">    
-        <li>{{ task.name }}</li>
+        <li>
+            <div>
+                {{ task.name }} <i *ngIf="task.done" class="material-icons">done</i>
+            </div>
+        </li>
         <i (click)="deleteTask(task.id)" class="material-icons">delete</i>
     </ul>
 </div>
